@@ -16,6 +16,8 @@ jobs:
         with:
           kernel-url: https://github.com/tejas101k/kernel_xiaomi_vayu
           kernel-dir : msm4.14
+          ccache : true
+          ccache-size : 4G
           kernel-branch: sixteen
           config: vayu_user_defconfig
           arch: arm64
