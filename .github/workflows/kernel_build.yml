@@ -15,7 +15,7 @@ jobs:
         uses: dabao1955/kernel_build_action@main
         with:
           kernel-url: https://github.com/tejas101k/kernel_xiaomi_vayu
-          kernel-dir : msm4.14
+          kernel-dir : kernel_xiaomi_vayu
           ccache : true
           ccache-size : 4G
           kernel-branch: sixteen
