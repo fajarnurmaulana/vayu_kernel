@@ -18,8 +18,9 @@ jobs:
           kernel-branch: main
           config: vayu_defconfig
           arch: arm64
-          aosp-gcc: false
+          aosp-gcc: true
           aosp-clang: true
+          disable-lto : true
           lld : true
           thin-lto : true
           android-version: 
