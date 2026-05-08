@@ -28,3 +28,4 @@ jobs:
           anykernel3: true
           release: true
           access-token: ${{ secrets.GITHUB_TOKEN }}
+          extra-make-args : '["CONFIG_NO_ERROR_ON_MISMATCH=y"]'
