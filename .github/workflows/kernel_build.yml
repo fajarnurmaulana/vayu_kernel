@@ -21,7 +21,8 @@ jobs:
           other-clang-url : https://github.com/kdrag0n/proton-clang.git
           other-clang-branch : master
           other-gcc64-url : https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9
-          other-gcc32-url : https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9
+          other-gcc64-url : https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-9.3.git
+          other-gcc64-url : lineage-23.2
           aosp-gcc: false
           aosp-clang: false
           disable-lto : true
