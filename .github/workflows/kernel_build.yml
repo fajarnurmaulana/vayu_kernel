@@ -19,7 +19,7 @@ jobs:
           config: vayu_defconfig
           arch: arm64
           aosp-gcc: true
-          aosp-clang: true
+          aosp-clang: false
           android-version: 16
           aosp-clang-version: r383902
           anykernel3: true
