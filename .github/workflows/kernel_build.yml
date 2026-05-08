@@ -1,29 +1,27 @@
-name: Android Kernel Build Action
+name: CI
+
 on:
-  workflow_dispatch:    # Memungkinkan build dijalankan manual dari tab 'Actions'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-kernel:
     name: Build Kernel
     runs-on: ubuntu-22.04
-    permissions:
-      contents: write   # Izin untuk membuat 'Release' di GitHub
     steps:
-      - name: Checkout Kernel Source
-        uses: actions/checkout@v4
-        with:
-          repository: USERNAME/NAMA_REPO_KERNEL   # Contoh: AcmeUI-Devices/android_kernel_xiaomi_cas[reference:2]
-          ref: NAMA_BRANCH                        # Contoh: taffy[reference:3]
-          path: kernel/source
-
-      - name: Build Kernel with Action
+      - name: Build
         uses: dabao1955/kernel_build_action@main
         with:
-          kernel-url: ./kernel/source/            # Menggunakan source lokal[reference:4]
-          config: NAMA_CONFIG                    # Contoh: cas_defconfig[reference:5]
+          kernel-url: https://github.com/tejas101k/kernel_xiaomi_vayu
+          kernel-branch: sixteen
+          config: vayu_defconfig
           arch: arm64
+          aosp-gcc: true
           aosp-clang: true
-          android-version: 12
-          anykernel3: true                       # Memaketkan kernel agar siap flash[reference:6]
-          release: true                          # Membuat arsip rilis otomatis
+          android-version: 16
+          aosp-clang-version: r383902
+          anykernel3: true
+          release: true
           access-token: ${{ secrets.GITHUB_TOKEN }}
